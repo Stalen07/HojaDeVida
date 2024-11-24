@@ -1,0 +1,312 @@
+body,h1,h2,h3,p,ul,li,a,
+
+img {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', sans-serif;
+    line-height: 1.6;
+    background: rgba(54, 52, 52, 0.9);
+    color: #220303;
+    position: relative;
+}
+
+/* Fondo animado */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364, #1c1c28, #3c3c58, #4a4a7d, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    filter: blur(30px);
+    opacity: 0.8;
+}
+
+/* Header */
+header {
+    background: #1b1919;
+    color: white;
+    padding: 20px 0;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+    background: #555;
+}
+
+/* Secciones */
+.section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* About */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    flex: 1;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    filter: brightness(0.9);
+}
+
+.estudios-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    /* Fondo blanco para la tabla */
+    color: #333333;
+    /* Texto oscuro para contraste */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    overflow: hidden;
+    /* Evita desbordes en los bordes */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para dar profundidad */
+}
+
+.estudios-table th,
+.estudios-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    
+    /* Borde gris claro */
+}
+
+.estudios-table th {
+    background: #f1f1f1;
+    /* Fondo gris claro para los encabezados */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #333333;
+    
+    /* Color del texto en los encabezados */
+}
+
+.estudios-table tr:nth-child(even) {
+    background: #fafafa;
+    /* Color gris claro para las filas pares */
+}
+
+.estudios-table tr:hover {
+    background: #e0e0e0;
+    /* Color gris más oscuro al pasar el cursor */
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Agrega sombra sutil al pasar el cursor */
+}
+
+.estudios-table td {
+    font-size: 16px;
+}
+
+.estudios-table tr:first-child {
+    border-top: 2px solid #ddd;
+    /* Borde superior más grueso */
+}
+
+.estudios-table tr:last-child {
+    border-bottom: 2px solid #ddd;
+    /* Borde inferior más grueso */
+}
+
+/* Proyectos */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #1b1919;
+    color: white;
+    margin-top: 50px;
+}
+
+
+@media screen and (max-width: 768px) {
+    header nav ul {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 183px; /* Aumenta este valor para que comience más abajo */
+        left: 50%; /* Centra el menú horizontalmente */
+        transform: translateX(-50%); /* Ajusta el desplazamiento */
+        width: 90%; /* Ajusta el ancho del menú */
+        background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+        padding: 10px;
+        z-index: 999; /* Asegura que quede sobre otros elementos */
+        transition: top 0.3s ease-in-out; /* Suaviza el movimiento del menú */
+    }
+
+    nav ul.show {
+        display: flex; /* Mostrar opciones cuando se active */
+    }
+
+    /* Para centrar el texto en el menú */
+    nav ul li {
+        text-align: center;
+    }
+
+
+
+    .menu {
+        display: block; /* Visible solo en móviles */
+        width: 30px;
+        height: 30px;
+        background-color: #1b1919; /* Fondo del botón */
+        position: relative; /* Para posicionar líneas dentro */
+        cursor: pointer; /* Indicador de clic */
+    }
+
+    /* Líneas del menú hamburguesa */
+    .menu::before,
+    .menu::after,
+    .menu span {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 3px; /* Grosor de las líneas */
+        background-color: #fff; /* Color de las líneas */
+        position: absolute;
+        left: 0;
+        transition: transform 0.3s ease, top 0.3s ease;
+    }
+
+    /* Línea superior */
+    .menu::before {
+        top: 5px;
+    }
+
+    /* Línea media */
+    .menu span {
+        top: 13px;
+    }
+
+    /* Línea inferior */
+    .menu::after {
+        top: 21px;
+    }
+
+    /* Animación cuando el menú está activo */
+    .menu.active::before {
+        transform: rotate(45deg); /* Rotar hacia la derecha */
+        top: 13px; /* Reposicionar al centro */
+    }
+
+    .menu.active span {
+        display: none; /* Oculta la línea del medio */
+    }
+
+    .menu.active::after {
+        transform: rotate(-45deg); /* Rotar hacia la izquierda */
+        top: 13px; /* Reposicionar al centro */
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .projects-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .estudios-table {
+        font-size: 14px; /* Texto más pequeño en pantallas pequeñas */
+    }
+
+    .estudios-table th,
+    .estudios-table td {
+        padding: 10px; /* Menos espacio en pantallas pequeñas */
+    }
+}
+    @keyframes gradientAnimation {
+        0% { background: linear-gradient(45deg, #4e73df, #1c1e39, #9b59b6, #34495e); }
+        25% { background: linear-gradient(45deg, #9b59b6, #4e73df, #34495e, #1c1e39); }
+        50% { background: linear-gradient(45deg, #34495e, #9b59b6, #4e73df, #1c1e39); }
+        75% { background: linear-gradient(45deg, #1c1e39, #34495e, #9b59b6, #4e73df); }
+        100% { background: linear-gradient(45deg, #4e73df, #1c1e39, #9b59b6, #34495e); }
+    }
